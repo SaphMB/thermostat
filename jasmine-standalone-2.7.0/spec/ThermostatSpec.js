@@ -35,12 +35,27 @@ describe ('Thermostat', function() {
     });
 
     it('has a maximum temperature of 25º when in power-saving mode', function() {
-      console.log("Hi");
       for(var i = 1; i < 40; i++) {
         thermostat.up();
       };
       expect(thermostat.getTemp()).toEqual(25);
     });
 
+    it('has a maximum temperature of 32º when not in power-saving mode', function() {
+      thermostat.powerSavingOff();
+      for(var i = 1; i < 40; i++) {
+        thermostat.up();
+      };
+      expect(thermostat.getTemp()).toEqual(32);
+    });
+
+    it('temperature stays within range acoording to the power-saving settings', function(){
+      thermostat.powerSavingOff();
+      for(var i = 1; i < 40; i++) {
+        thermostat.up();
+      };
+      thermostat.powerSavingOn();
+      expect(thermostat.getTemp()).toEqual(25);
+    });
   });
 });
