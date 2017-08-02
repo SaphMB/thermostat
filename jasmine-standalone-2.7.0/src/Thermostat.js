@@ -6,7 +6,9 @@ function Thermostat () {
   this.MAX_TEMP_PS_MODE_ON = 25;
   this.MAX_TEMP_PS_MODE_OFF = 32;
   this.temp = this.DEFAULT_TEMP;
-  this.powerSavingIsOn = true;
+  this.powerSaving = true;
+  this.LOW_USAGE_CAP = 18;
+  this.MED_USAGE_CAP = 25;
   var maxTemp;
   this._setMaxTemp();
 };
@@ -22,24 +24,42 @@ Thermostat.prototype.down = function() {
 };
 
 Thermostat.prototype.up = function() {
-  console.log(this.maxTemp);
   if (this.getTemp() === this.maxTemp) {
     return }
   this.temp += 1;
 };
 
 Thermostat.prototype.powerSavingOff = function() {
-  this.powerSavingIsOn = false;
+  this.powerSaving = false;
   this._setMaxTemp();
 };
 
 Thermostat.prototype.powerSavingOn = function() {
-  this.powerSavingIsOn = true;
+  this.powerSaving = true;
   this._setMaxTemp();
   this.temp -= this.temp % this.maxTemp;
 };
 
+Thermostat.prototype.powerSavingIsOn = function() {
+  return this.powerSaving;
+};
+
+Thermostat.prototype.reset = function() {
+  this.temp = this.DEFAULT_TEMP;
+};
+
+Thermostat.prototype.energyUsage = function() {
+  if (this.getTemp() < this.LOW_USAGE_CAP) {
+    return 'low-usage';
+  } else if (this.getTemp() < this.MED_USAGE_CAP) {
+    return 'medium-usage';
+  } else {
+    return 'high-usage';
+  };
+};
+
+
 // Private implementation
 Thermostat.prototype._setMaxTemp = function() {
-  this.maxTemp = this.powerSavingIsOn ? this.MAX_TEMP_PS_MODE_ON : this.MAX_TEMP_PS_MODE_OFF;
+  this.maxTemp = this.powerSaving ? this.MAX_TEMP_PS_MODE_ON : this.MAX_TEMP_PS_MODE_OFF;
 };
