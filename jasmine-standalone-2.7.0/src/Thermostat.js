@@ -6,3 +6,11 @@ function Thermostat () {
 Thermostat.prototype.getTemp = function() {
   return this.temp;
 };
+
+Thermostat.prototype.down = function() {
+  this.temp -= 1;
+};
+
+Thermostat.prototype.up = function() {
+  this.temp += 1;
+};

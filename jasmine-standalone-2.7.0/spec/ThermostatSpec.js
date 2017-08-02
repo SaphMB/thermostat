@@ -10,4 +10,18 @@ describe ('Thermostat', function() {
     });
   });
 
+  describe('when the user adjusts the temperature', function(){
+    it('should decrease the temperature by 1º',function(){
+      initialTemp = thermostat.getTemp();
+      thermostat.down();
+      expect(thermostat.getTemp()).toEqual(initialTemp - 1);
+    });
+
+    it('should increase the temperature by 1º',function(){
+      initialTemp = thermostat.getTemp();
+      thermostat.up();
+      expect(thermostat.getTemp()).toEqual(initialTemp + 1);
+    });
+
+  });
 });
