@@ -37,7 +37,7 @@ Thermostat.prototype.powerSavingOff = function() {
 Thermostat.prototype.powerSavingOn = function() {
   this.powerSaving = true;
   this._setMaxTemp();
-  this.temp -= this.temp % this.maxTemp;
+  this.temp = this.MAX_TEMP_PS_MODE_ON;
 };
 
 Thermostat.prototype.powerSavingIsOn = function() {
@@ -50,11 +50,11 @@ Thermostat.prototype.reset = function() {
 
 Thermostat.prototype.energyUsage = function() {
   if (this.getTemp() < this.LOW_USAGE_CAP) {
-    return 'low-usage';
+    return 'low';
   } else if (this.getTemp() < this.MED_USAGE_CAP) {
-    return 'medium-usage';
+    return 'medium';
   } else {
-    return 'high-usage';
+    return 'high';
   };
 };
 
