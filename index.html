@@ -3,24 +3,30 @@
   <script src="js/Thermostat.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/interface.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:500" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="js/bootstrap.js"></script>
 </head>
 
 <body>
   <div class="page-header">
-  <h1>Thermostat</h1>
+    <h1>Thermostat!</h1>
+    <h2> Combatting climate change - with a fist</h2>
   </div>
   <div id="localWeather"></div>
-  Find out the weather where you are:<input id='city' type="text">
-  <button id="citySearch">Go!</button>
-  <h2 id="temperature">18 degrees</h1><br />
-  <h2 id='energyMode'> Energy saving - </h2><br />
-  <h2>Power usage: </h2>
-  <h2 id='powerUsage'>?</h2><br />
-  <button id='temperature-down'>-</button>
-  <button id='temperature-up'>+</button><br />
-  <button id='reset'>Reset</button><br />
+    <h3>Alert our plucky hero about the weather in your area:<h3/>
+    <input id='city' type="text">
+  <button id="citySearch" class="btn btn-default">Enter your city</button>
+  <h2>The climate in your home</h2>
+  <h3 id="temperature">18 degrees</h1><br />
+  <h3 id='energyMode'> Energy saving mode - </h2><br />
+  <h3>Power usage: </h2>
+  <h3 id='powerUsage'>?</h2><br />
+  <button id='temperature-down' class="btn btn-default">-</button>
+  <button id='temperature-up' class="btn btn-default">+</button><br />
+  <button id='reset' class="btn btn-default">Reset</button><br />
   <form >
     <input id='energyModeToggle' type="checkbox"> Power-saving
   </form>

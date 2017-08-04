@@ -49,15 +49,11 @@ $(document).ready(function() {
 
   function updateModeIndicator () {
     if (thermostat.powerSavingIsOn()) {
-      $('#energyMode').text("Energy saving - On");
+      $('#energyMode').text("Energy saving mode - On");
     } else {
-      $('#energyMode').text("Energy saving - Off");
+      $('#energyMode').text("Energy saving mode - Off");
     }
   }
-
-  // $.get('http://api.openweathermap.org/data/2.5/weather?q=London&temp&APPID=515ecc49170f16c2dfa8b237a834e1fe', function(weatherResponse)  {
-  // $("#localWeather").html("Weather in London: " + Math.round(weatherResponse.main.temp - 273.15) + " degrees");
-  // });
 
   $('#citySearch').click(function() {
     var currentCity = $('#city').val();
