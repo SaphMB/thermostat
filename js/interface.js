@@ -1,7 +1,3 @@
-window.onload = function () {
-  alert("welcome");
-};
-
 var thermostat = new Thermostat();
 
 $(document).ready(function() {
@@ -35,28 +31,41 @@ $(document).ready(function() {
     updateTempIndicator();
   });
 
+  function updateEnergyUsageIndicator(){
+    $('#powerUsage').text(thermostat.energyUsage());
+  }
+
+  function updateTempIndicator() {
+    $('#temperature').text(thermostat.getTemp() + " degrees");
+  }
+
+  function changeEnergyMode(){
+    if($("#energyModeToggle").prop("checked")) {
+      thermostat.powerSavingOn();
+    } else {
+      thermostat.powerSavingOff();
+    }
+  }
+
+  function updateModeIndicator () {
+    if (thermostat.powerSavingIsOn()) {
+      $('#energyMode').text("Energy saving - On");
+    } else {
+      $('#energyMode').text("Energy saving - Off");
+    }
+  }
+
+  // $.get('http://api.openweathermap.org/data/2.5/weather?q=London&temp&APPID=515ecc49170f16c2dfa8b237a834e1fe', function(weatherResponse)  {
+  // $("#localWeather").html("Weather in London: " + Math.round(weatherResponse.main.temp - 273.15) + " degrees");
+  // });
+
+  $('#citySearch').click(function() {
+    var currentCity = $('#city').val();
+    var requestString = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&temp&APPID=515ecc49170f16c2dfa8b237a834e1fe&units=metric";
+    $.get(requestString, function(weatherResponse)  {
+    $("#localWeather").text("Weather in " + currentCity + ": " + weatherResponse.main.temp + " degrees");
+    });
+  });
+
+
 });
-
-function updateEnergyUsageIndicator(){
-  $('#powerUsage').text(thermostat.energyUsage());
-}
-
-function updateTempIndicator() {
-  $('#temperature').text(thermostat.getTemp() + " degrees");
-}
-
-function changeEnergyMode(){
-  if($("#energyModeToggle").prop("checked")) {
-    thermostat.powerSavingOn();
-  } else {
-    thermostat.powerSavingOff();
-  }
-}
-
-function updateModeIndicator () {
-  if (thermostat.powerSavingIsOn()) {
-    $('#energyMode').text("Energy saving - On");
-  } else {
-    $('#energyMode').text("Energy saving - Off");
-  }
-}
