@@ -15,24 +15,42 @@
     <div class="col-md-4"></div>
     <img class="img-responsive col-md-4" src="ThermostatFinal.png"></img>
     <div class="col-md-4"></div>
-
   </div>
-    <h2> Combatting climate change - with a fist</h2>
-  <div id="localWeather"></div>
-    <h3>Alert our plucky hero about the weather in your area:<h3/>
-    <input id='city' type="text">
-  <button id="citySearch" class="btn btn-default">Enter your city</button>
-  <h2>The climate in your home</h2>
-  <h3 id="temperature">18 degrees</h1><br />
-  <h3 id='energyMode'> Energy saving mode - </h2><br />
-  <h3>Power usage: </h2>
-  <h3 id='powerUsage'>?</h2><br />
-  <button id='temperature-down' class="btn btn-default">-</button>
-  <button id='temperature-up' class="btn btn-default">+</button><br />
-  <button id='reset' class="btn btn-default">Reset</button><br />
-  <form >
-    <input id='energyModeToggle' type="checkbox"> Power-saving
-  </form>
+
+  <div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2> Combatting climate change - with a fist</h2>
+      <p id="localWeather"></p>
+      <h3>Alert our plucky hero about the weather in your area:<h3/>
+      <div class="input-group">
+        <input type="text" class="form-control" id='city'>
+        <span class="input-group-btn">
+          <button id="citySearch" class="btn btn-default" type="button">Enter your city</button>
+        </span>
+      </div>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <!-- <div class="container">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"> -->
+      <h3>The climate in your home</h3>
+      <p id="temperature">18 degrees</p><br />
+      <p id='energyMode'> Energy saving mode - </p><br />
+      <p>Power usage: </p>
+      <p id='powerUsage'>?</p><br />
+      <form >
+        <input id='energyModeToggle' type="checkbox"> Power-saving
+      </form>
+      <button id='temperature-down' class="btn btn-default" type="button">-</button>
+      <button id='reset' class="btn btn-default" type="button">Reset</button>
+      <button id='temperature-up' class="btn btn-default" type="button">+</button>
+    <!-- </div> -->
+    <!-- <div class="col-md-4"></div> -->
+  <!-- </div> -->
 
 </body>
 </html>

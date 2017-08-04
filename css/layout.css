@@ -4,8 +4,23 @@ body {
   background-color: #4169e1;
   font-family: 'Oswald', sans-serif;
   text-align: center;
+  color: #FEFBF7;
 }
 
 .img-responsive {
   align-content: center;
+}
+
+#city {
+  color: black;
+}
+
+p {
+  font-size: 23;
+}
+
+.btn {
+  color: #FEFBF7;
+  background-color: #FDA100;
+
 }
