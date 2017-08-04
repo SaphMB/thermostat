@@ -1,9 +1,11 @@
-h1 {
-  text-align: center;
-  font-family: 'Bangers', cursive !important;
-}
+
 
 body {
+  background-color: #4169e1;
   font-family: 'Oswald', sans-serif;
   text-align: center;
+}
+
+.img-responsive {
+  align-content: center;
 }
