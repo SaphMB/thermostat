@@ -13,7 +13,7 @@ describe ('Thermostat', function() {
       expect(thermostat.getTemp()).toEqual(20);
     });
 
-    it('shoudl be in power saving mode', function () {
+    it('should be in power saving mode', function () {
       expect(thermostat.powerSavingIsOn()).toEqual(true);
     });
 
@@ -79,21 +79,21 @@ describe ('Thermostat', function() {
       while (thermostat.getTemp() >= 18 ) {
         thermostat.down();
       };
-      expect(thermostat.energyUsage()).toEqual("low-usage");
+      expect(thermostat.energyUsage()).toEqual("low");
     });
 
     it('reports medium-usage when below 25º', function () {
       while (thermostat.getTemp() > 25 ) {
         thermostat.down();
       };
-      expect(thermostat.energyUsage()).toEqual("medium-usage");
+      expect(thermostat.energyUsage()).toEqual("medium");
     });
 
     it('reports low-usage in below 18º', function () {
       while (thermostat.getTemp() < 25 ) {
         thermostat.up();
       };
-      expect(thermostat.energyUsage()).toEqual("high-usage");
+      expect(thermostat.energyUsage()).toEqual("high");
     });
 
   });
