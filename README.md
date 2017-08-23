@@ -33,7 +33,7 @@ $ open SpecRunner.html
 
 ## Program screenshots
 
-![Screenshot](https://www.dropbox.com/s/uevuj73t79t4j1a/Screen%20Shot%202017-08-22%20at%2023.12.37.png?dl=1)
+![Screenshot](http://i.imgur.com/ud1vL9E.png)
 
 
-![Screenshot](https://www.dropbox.com/s/gf5zvqf1b6e0a4p/Screen%20Shot%202017-08-22%20at%2023.13.16.png?dl=1)
+![Screenshot](http://i.imgur.com/3BqJWzm.png)
